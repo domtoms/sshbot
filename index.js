@@ -41,20 +41,13 @@ bot.on("message", (msg) =>
 			break;
 
 		default:
-			// string to store command
-			var cmd = "";
-
-			// add all args to string
-			for (var arg in args)
-				cmd += args[arg] + " ";
-
 			// output command
-			exec (cmd, msg);
+			exec (msg);
 	}
 });
 
 // execute a shell command
-function exec(cmd, msg)
+function exec(msg)
 {
 	// create a new client
 	const ssh = new Client();
@@ -75,7 +68,7 @@ function exec(cmd, msg)
 		var resp = "";
 
 		// execute the command
-		ssh.exec(cmd, (err, stream) =>
+		ssh.exec(mgs.content, (err, stream) =>
 		{
 			// begone
 			if (err) throw err;
