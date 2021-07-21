@@ -1,0 +1,9 @@
+# nodejs stuff
+node_modules
+package-lock.json
+
+# enviroment variables
+.env
+
+# ssh keys
+sshbotuser.pem
