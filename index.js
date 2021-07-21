@@ -33,16 +33,19 @@ bot.on("message", (msg) =>
 	// split the message into an array
 	var args = msg.content.split(" ");
 
+	// check first argument
 	switch (args[0])
 	{
+		// help argument
 		case "help":
 			// send help message
 			msg.channel.send("Just type `$ your-command-here` to run a shell command!");
 			break;
 
+		// otherwise execute command
 		default:
 			// output command
-			exec (msg);
+			exec(msg);
 	}
 });
 
@@ -55,6 +58,7 @@ function exec(msg)
 	// connect client to the ec2 instance
 	ssh.connect(
 	{
+		// read variables from env variables
 		host: process.env.SSH_HOST,
 		port: process.env.SSH_PORT,
 		username: process.env.SSH_USER,
@@ -68,7 +72,7 @@ function exec(msg)
 		var resp = "";
 
 		// execute the command
-		ssh.exec(mgs.content, (err, stream) =>
+		ssh.exec(msg.content, (err, stream) =>
 		{
 			// begone
 			if (err) throw err;
