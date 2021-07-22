@@ -43,6 +43,7 @@ Now that everything has been set up it's time to actually run the bot. The bot c
 ```sh
 node .
 ```
+While running the bot locally is pretty cool, I would recommend using a service such as Docker to store the app in a container and then running the container on a secure server to maximise the applications speed and uptime.
 
 ### Using the Bot
 Once the bot is up and running in your server, usage is incredibly simple. Simply type the prefix you specified in the config file followed by the command you want to run on your remote machine. If you want to output the contents of the help file, simply send a message containing your prefix followed by `help`.
