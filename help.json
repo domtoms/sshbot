@@ -6,7 +6,7 @@
 		"fields": [
 		{
 			"name": "Running a Command",
-			"value": "To run a command simply type, the bots syntax followed by the command you want to run. For example, if the syntax is `$` and you want to run `whoami`, you would type `$ whoami`."
+			"value": "To run a command, simply type the bots prefix followed by the command you want to run. For example, if the prefix is `$` and you want to run `whoami`, you would type `$ whoami`."
 		}]
 	}
 }
