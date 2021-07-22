@@ -11,18 +11,32 @@ const { readFileSync } = require("fs");
 // for enviroment variables
 require('dotenv').config();
 
+// config file
+var config = require("./config.json")
+
+// help embed file
+var help = require("./help.json");
+
 // on bot start
 bot.on("ready", () =>
 {
 	// set the bot activity
-	bot.user.setActivity("$help", {type: "PLAYING"}); 
+	bot.user.setActivity(config.prefix + " help", {type: "PLAYING"}); 
 });
 
 // on a new message
 bot.on("message", (msg) =>
 {
 	// fuck off outta here
-	if (!msg.content.startsWith("$")) return;
+	if (!msg.content.startsWith(config.prefix)) return;
+
+	// user doesn't have permission
+	if (!hasRole(msg))
+	{
+		// tell the user they don't have permission
+		msg.channel.send("You do not have the permissions to use this bot :(")
+		return;
+	}
 
 	// remove the first char of msg
 	msg.content = msg.content.substring(1);
@@ -39,7 +53,8 @@ bot.on("message", (msg) =>
 		// help argument
 		case "help":
 			// send help message
-			msg.channel.send("Just type `$ your-command-here` to run a shell command!");
+			//msg.channel.send("Just type `$ your-command-here` to run a shell command!");
+			msg.channel.send(help);
 			break;
 
 		// otherwise execute command
@@ -93,19 +108,33 @@ function exec(msg)
 
 				// otherwise send the response
 				else
-					msg.channel.send("```\n" + resp + "```");
+					msg.channel.send("```" + resp + "```");
 
 				// end the connection
 				return ssh.end();
+			})
 
 			// for each line
-			}).on("data", (data) =>
+			.on("data", (data) =>
 			{
 				// add the line to the output
 				resp += data;
 			})
 		});
 	})
+}
+
+
+// check if member has role
+function hasRole(msg)
+{
+	// compare the roles
+	for (role in config.roles)
+		if (msg.member.roles.cache.some(r => r.name === config.roles[role]))
+			return true;
+
+	// otherwise return false
+	return false;
 }
 
 // todo store in env variable
