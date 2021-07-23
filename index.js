@@ -34,7 +34,7 @@ bot.on("message", (msg) =>
 	if (!hasRole(msg))
 	{
 		// tell the user they don't have permission
-		msg.channel.send("You do not have the permissions to use this bot :(");
+		msg.channel.send("You do not have the permissions to use this bot :pensive:");
 		return;
 	}
 
@@ -98,16 +98,16 @@ function exec(msg)
 				resp = resp.replace(/(\x9B|\x1B\[)[0-?]*[ -\/]*[@-~]/g, "");
 
 				// response is too long
-				if (resp.length > 1994)
-					msg.channel.send("Response is over 2000 chars :(");
+				if (resp.length > 1993)
+					msg.channel.send("Response is over 2000 chars :pensive:");
 
 				// response is empty
 				else if (resp.length === 0)
-					msg.channel.send("No response received :(");
+					msg.channel.send("No response received :pensive:");
 
 				// otherwise send the response
 				else
-					msg.channel.send("```" + resp + "```");
+					msg.channel.send("```\n" + resp + "```");
 
 				// end the connection
 				return ssh.end();
