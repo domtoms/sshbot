@@ -9,10 +9,10 @@ const { Client } = require("ssh2");
 const { readFileSync } = require("fs");
 
 // for enviroment variables
-require('dotenv').config();
+require("dotenv").config();
 
 // config file
-var config = require("./config.json")
+var config = require("./config.json");
 
 // help embed file
 var help = require("./help.json");
@@ -38,8 +38,8 @@ bot.on("message", (msg) =>
 		return;
 	}
 
-	// remove the first char of msg
-	msg.content = msg.content.substring(1);
+	// remove the prefix
+	msg.content = msg.content.substring(config.prefix.length);
 
 	// trim the fat
 	msg.content = msg.content.trim();
@@ -53,7 +53,6 @@ bot.on("message", (msg) =>
 		// help argument
 		case "help":
 			// send help message
-			//msg.channel.send("Just type `$ your-command-here` to run a shell command!");
 			msg.channel.send(help);
 			break;
 
@@ -99,7 +98,7 @@ function exec(msg)
 				resp = resp.replace(/(\x9B|\x1B\[)[0-?]*[ -\/]*[@-~]/g, "");
 
 				// response is too long
-				if (resp.length > 1999)
+				if (resp.length > 1994)
 					msg.channel.send("Response is over 2000 chars :(");
 
 				// response is empty
@@ -137,5 +136,5 @@ function hasRole(msg)
 	return false;
 }
 
-// todo store in env variable
+// login to the discord bot!
 bot.login(process.env.DISCORD_KEY);

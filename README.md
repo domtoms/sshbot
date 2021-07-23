@@ -2,12 +2,12 @@
 
 ## What is sshbot?
 ### Introduction
-sshbot is a simple Discord bot designed for allowing users to run and execute commands on a remote machine using the SSH2 library for NodeJS. This can be used for anything from an Amazon EC2 instnce all the way to a Raspberry Pi.
+sshbot is a simple Discord bot designed for allowing users to run and execute commands on a remote machine using the SSH2 library for NodeJS. This can be used for anything from an Amazon EC2 instance, a Raspberry Pi or even your main PC.
 
 ![example](https://i.imgur.com/BGLBRWZ.png "example")
 
 ### Uses and Limitations
-While the bot is mostly for fun, it can be used for just about anything that can be done on a remote machine through SSH. This includes running and compiling code, installing software and having entire conversations through cowsay. Unfortunately since Discord is a limited interface, the bot cannot print responses over 2000 characters or display the output from programs that don't immediately terminate such as Vim.
+While the bot is mostly for fun, it can be used for just about anything that can be done on a remote machine through SSH. This includes running and compiling code, installing software and having entire conversations through cowsay. Unfortunately, since Discord is a limited interface, the bot cannot print responses over 2000 characters or display the output from programs that don't immediately terminate such as Vim.
 
 ## Running sshbot
 ### Getting Everything Ready
@@ -32,14 +32,14 @@ SSH_KEY = ./sshkey.pem
 You can configure the bot to meet your specific needs through the `config.json` file. The config file should look like the example below.
 ```json
 {
-    "prefix": "$",
-    "roles": ["admin", "mod"]
+	"prefix": "$",
+	"roles": ["admin", "mod"]
 }
 ```
 Please note that if you want anyone in the server to have access to the bot, the `roles` array should contain `"@everyone"` as an element.
 
 ### Running the Bot
-Now that everything has been set up it's time to actually run the bot. The bot can be run locally with the following command.
+Now that everything has been set up it's time to run the bot. The bot can be run locally with the following command.
 ```sh
 node .
 ```
