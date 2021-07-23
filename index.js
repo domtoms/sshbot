@@ -21,7 +21,7 @@ var help = require("./help.json");
 bot.on("ready", () =>
 {
 	// set the bot activity
-	bot.user.setActivity(config.prefix + " help", {type: "PLAYING"}); 
+	bot.user.setActivity(config.prefix + "help", {type: "PLAYING"}); 
 });
 
 // on a new message
@@ -34,7 +34,7 @@ bot.on("message", (msg) =>
 	if (!hasRole(msg))
 	{
 		// tell the user they don't have permission
-		msg.channel.send("You do not have the permissions to use this bot :(")
+		msg.channel.send("You do not have the permissions to use this bot :(");
 		return;
 	}
 
