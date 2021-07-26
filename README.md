@@ -52,5 +52,11 @@ Once the bot is up and running in your server, usage is incredibly simple. Simpl
 ![example](https://imgur.com/VZd1dFl.png "example")
 
 ### Uploading a File
-You can upload files to your 
+You can upload files to your machine using SFTP by using the `upload` command in a message where you upload a file.
+
+![example](https://imgur.com/uLRuafm.png "example")
+
+You can optionally specify the path and the filename you want to upload the file with as a second argument when using the upload command.
+
+![example](https://imgur.com/H18MxIk.png "example")
 

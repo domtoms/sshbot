@@ -7,6 +7,10 @@
 		{
 			"name": "Running a Command",
 			"value": "To run a command, simply type the bots prefix followed by the command you want to run. For example, if the prefix is `$` and you want to run `whoami`, you would type `$ whoami`."
+		},
+		{
+			"name": "Uploading a File",
+			"value": "You can upload files to your machine using SFTP by using the `upload` command in a message where you upload a file. You can optionally specify the path and the filename you want to upload the file with as a second argument."
 		}]
 	}
 }
