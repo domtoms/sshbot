@@ -1,7 +1,7 @@
 {
   "name": "sshbot",
   "version": "1.0.0",
-  "description": "A simple Discord bot designed for allowing users to run and execute commands on a remote machine using the SSH2 library for NodeJS. ",
+  "description": "A simple Discord bot designed for allowing users to run and execute commands on a remote machine using the SSH2 library for NodeJS.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
