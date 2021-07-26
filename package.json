@@ -1,7 +1,7 @@
 {
   "name": "sshbot",
   "version": "1.0.0",
-  "description": "run shell commands on an ec2 instance through discord",
+  "description": "A simple Discord bot designed for allowing users to run and execute commands on a remote machine using the SSH2 library for NodeJS. ",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,6 +11,8 @@
   "dependencies": {
     "discord.js": "^12.5.3",
     "dotenv": "^10.0.0",
-    "ssh2": "^1.1.0"
+    "https": "^1.0.0",
+    "ssh2": "^1.1.0",
+    "ssh2-sftp-client": "^7.0.0"
   }
 }
