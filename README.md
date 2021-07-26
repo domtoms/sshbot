@@ -54,5 +54,10 @@ Once the bot is up and running in your server, usage is incredibly simple. Simpl
 ### Uploading a File
 You can upload files to your machine using SFTP by using the `upload` command in a message where you upload a file. You can optionally specify the path and the filename you wish to upload the file with as a second argument.
 
-![example](https://imgur.com/kvMK4Xz.png "example")
+![example](https://imgur.com/xnyQIy4.png "example")
+
+### Requesting Help
+If at any time you wish to read up on how any specific command works, you can simply run the help command to display a rich embed containing instructions on using the bot. The contents of the rich embed can be edited in `help.json`.
+
+![example](https://imgur.com/KPkKAgY.png "example")
 
